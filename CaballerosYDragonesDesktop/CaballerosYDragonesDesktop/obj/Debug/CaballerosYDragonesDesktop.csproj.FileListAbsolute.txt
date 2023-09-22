@@ -1,0 +1,16 @@
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesDesktop.exe.config
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesDesktop.exe
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesDesktop.pdb
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesClassLibrary.dll
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesClassLibrary.pdb
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.csproj.AssemblyReference.cache
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.csproj.SuggestedBindingRedirects.cache
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.FormPrincipal.resources
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.FormDatos.resources
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.FormHistorial.resources
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.Properties.Resources.resources
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.csproj.GenerateResource.cache
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.csproj.CoreCompileInputs.cache
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.csproj.CopyComplete
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.exe
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.pdb
