@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections;
 
 using CaballerosYDragonesClassLibrary;
+using CaballerosYDragonesNivel2ClassLibrary;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CaballerosYDragonesDesktop
@@ -43,6 +44,22 @@ namespace CaballerosYDragonesDesktop
                 {
                     nuevo = new CaballerosYDragonesBasico(jugador, cantidad);
                 }
+                else if (nivel == 2)
+                {
+                    nuevo = new CaballerosYDragonesNivel2(jugador, cantidad);
+                }
+
+                if (nuevo is CaballerosYDragonesNivel2 nivel2)
+                {
+                    for(int m = 0; m < nivel2.CantidadElementos; m++)
+                    {
+                        Elemento elemento = nivel2.VerElemento(m);
+                        string linea = $"   {elemento.VerDescripcion()} ";
+
+                        lbResultados.Items.Add(linea);
+                        lbResultados.SelectedIndex = lbResultados.Items.Count - 1;
+                    }
+                }
 
                 lbResultados.Items.Add("---");
 
@@ -65,10 +82,28 @@ namespace CaballerosYDragonesDesktop
 
                     lbResultados.Items.Add(linea);
                     lbResultados.SelectedIndex = lbResultados.Items.Count - 1; ;
+                    
+                    if (jugador is JugadorNivel2 legacy)
+                    {
+                        for(int m = 0; m <legacy.CantidadAfectadores; m++)
+                        {
+                            Elemento quien = legacy.VerPorQuien(m);
+                            linea = $"   Afectado por: {quien.VerDescripcion()} ";
+
+                            lbResultados.Items.Add(linea);
+                            lbResultados.SelectedIndex = lbResultados.Items.Count - 1;
+                        }
+                    }
 
                 }
 
                 lbResultados.Items.Add("------");
+
+                foreach (Elemento elemento in ((CaballerosYDragonesNivel2)nuevo).Elementos)
+                {
+                    lbResultados.Items.Add("Dragon: " + ((Dragon)elemento).IdJugador + "---" + " Posicion Anterior: " + ((Dragon)elemento).PosicionAnterior + "---" + " Posicion Actual: " + ((Dragon)elemento).PosicionActual);
+                        
+                }
             }
             else
             {
