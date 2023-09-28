@@ -13,6 +13,10 @@ namespace CaballerosYDragonesClassLibrary
 
         public int CantidadJugadores { get { return jugadores.Count; } }
 
+        
+
+        
+
         public CaballerosYDragonesBasico(string nombre, int cantJugadores)
         {
             InicializarTablero(nombre, cantJugadores);
@@ -41,7 +45,7 @@ namespace CaballerosYDragonesClassLibrary
             return (Jugador)jugadores[index];
         }
 
-        public bool HaFinalizado()
+        virtual public bool HaFinalizado()
         {
             bool haFinalizado = false;
 
@@ -54,6 +58,8 @@ namespace CaballerosYDragonesClassLibrary
             }
             return haFinalizado;
         }
+
+
         
     }
 }

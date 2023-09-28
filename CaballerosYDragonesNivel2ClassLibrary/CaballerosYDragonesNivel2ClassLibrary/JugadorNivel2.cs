@@ -10,6 +10,21 @@ namespace CaballerosYDragonesNivel2ClassLibrary
 {
     public class JugadorNivel2: Jugador
     {
+        bool perdio = false;
+
+        public bool HaPerdido
+        {
+            get
+            { return perdio; }
+            set
+            { perdio = value; }
+
+        }
+
+        JugadorNivel2 perdedor;
+
+        public JugadorNivel2 Perdedor { get { return perdedor; } set { perdedor = value; } }
+
         public JugadorNivel2(string nombre): base(nombre)
         {
             porQuienesFueAfectado = new ArrayList();
@@ -48,8 +63,12 @@ namespace CaballerosYDragonesNivel2ClassLibrary
 
         public override void Mover()
         {
-            base.Mover();
-            porQuienesFueAfectado = new ArrayList();
+            if (perdio == false)
+            {
+                base.Mover();
+                porQuienesFueAfectado = new ArrayList();
+            }
+            
         }
     }
 }

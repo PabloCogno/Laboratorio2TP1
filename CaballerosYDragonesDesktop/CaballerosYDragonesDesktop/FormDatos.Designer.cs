@@ -77,7 +77,7 @@
             // 
             this.nudCantJugadores.Location = new System.Drawing.Point(195, 101);
             this.nudCantJugadores.Maximum = new decimal(new int[] {
-            2,
+            3,
             0,
             0,
             0});

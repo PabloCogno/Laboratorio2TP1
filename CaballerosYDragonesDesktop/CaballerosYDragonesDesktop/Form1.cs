@@ -11,7 +11,9 @@ using System.Collections;
 
 using CaballerosYDragonesClassLibrary;
 using CaballerosYDragonesNivel2ClassLibrary;
+using CaballerosYDragonesNivel3ClassLibrary;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace CaballerosYDragonesDesktop
 {
@@ -48,6 +50,10 @@ namespace CaballerosYDragonesDesktop
                 {
                     nuevo = new CaballerosYDragonesNivel2(jugador, cantidad);
                 }
+                else if (nivel == 3)
+                {
+                    nuevo = new CaballerosYDragonesNivel3(jugador, cantidad);
+                }
 
                 if (nuevo is CaballerosYDragonesNivel2 nivel2)
                 {
@@ -69,26 +75,42 @@ namespace CaballerosYDragonesDesktop
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            if (nuevo.HaFinalizado() == false)
+            if ((nuevo.HaFinalizado() == false) && (((CaballerosYDragonesNivel3)nuevo).EvaluarGanador() == null))
             {
                 nuevo.Jugar();
+                
+                if (nuevo is CaballerosYDragonesNivel2 nivel2)
+                {
+                    nivel2.EvaluarJuego();
+                }
+                else if (nuevo is CaballerosYDragonesNivel3 nivel3)
+                {
+                    nivel3.EvaluarJuego();
+                    
+                }
 
-                for(int n = 0; n < nuevo.CantidadJugadores; n++)
+                for (int n = 0; n < nuevo.CantidadJugadores; n++)
                 {
                     Jugador jugador = nuevo.VerJugador(n);
 
-                    string linea = $">{jugador.Nombre} se movió desde la posición: {jugador.PosicionAnterior}" +
+                    string linea;
+
+                   
+
+                    linea = $">{jugador.Nombre} se movió desde la posición: {jugador.PosicionAnterior}" +
                                     $"a la posición {jugador.PosicionActual} ({jugador.Avance})";
 
                     lbResultados.Items.Add(linea);
-                    lbResultados.SelectedIndex = lbResultados.Items.Count - 1; ;
+                    lbResultados.SelectedIndex = lbResultados.Items.Count - 1; 
                     
                     if (jugador is JugadorNivel2 legacy)
                     {
                         for(int m = 0; m <legacy.CantidadAfectadores; m++)
                         {
                             Elemento quien = legacy.VerPorQuien(m);
+                            
                             linea = $"   Afectado por: {quien.VerDescripcion()} ";
+                            
 
                             lbResultados.Items.Add(linea);
                             lbResultados.SelectedIndex = lbResultados.Items.Count - 1;
@@ -98,24 +120,71 @@ namespace CaballerosYDragonesDesktop
                 }
 
                 lbResultados.Items.Add("------");
-
-                foreach (Elemento elemento in ((CaballerosYDragonesNivel2)nuevo).Elementos)
+                if (nuevo is CaballerosYDragonesNivel2)
                 {
-                    lbResultados.Items.Add("Dragon: " + ((Dragon)elemento).IdJugador + "---" + " Posicion Anterior: " + ((Dragon)elemento).PosicionAnterior + "---" + " Posicion Actual: " + ((Dragon)elemento).PosicionActual);
-                        
+                    foreach (Elemento elemento in ((CaballerosYDragonesNivel2)nuevo).Elementos)
+                    {
+                        if (elemento is Dragon)
+                        {
+                            lbResultados.Items.Add("Dragon: " + ((Dragon)elemento).IdJugador + "---" + " Posicion Anterior: " + ((Dragon)elemento).PosicionAnterior + "---" + " Posicion Actual: " + ((Dragon)elemento).PosicionActual);
+                        }
+
+                    }
                 }
+
+                if (nuevo is CaballerosYDragonesNivel3)
+                {
+                    foreach (Calabozos calabozo in ((CaballerosYDragonesNivel3)nuevo).Calabozos)
+                    {
+                        if (calabozo is Calabozos)
+                        {
+                            lbResultados.Items.Add("Calabozo -- Posicion Actual: " + ((Calabozos)calabozo).PosicionActual);
+                        }
+
+                    }
+
+                    
+                }
+
+                //if (nuevo is CaballerosYDragonesNivel3 nivel4)
+                //{
+                //    for (int m = 0; m < nivel4.CantidadElementos; m++)
+                //    {
+                //        Jugador jugador = nuevo.VerJugador(m);
+
+                //        if (jugador is JugadorNivel3)
+                //        {
+                //            if (((JugadorNivel3)jugador).HaPerdido)
+                //            {
+                //                MessageBox.Show("Jugador perdedor: " + nivel4.Perdedor.Nombre);
+                //            }
+                //        }
+                //    }
+                //}
+
+
+
             }
             else
             {
                 MessageBox.Show("Finalizó!");
 
-                for(int n = 0; n < nuevo.CantidadJugadores; n++)
+                
+
+                for (int n = 0; n < nuevo.CantidadJugadores; n++)
                 {
                     Jugador jug = nuevo.VerJugador(n);
                     if (jug.HaLLegado)
                     {
                         AgregarPartida(jug.Nombre);
                     }
+                }
+
+                if (((CaballerosYDragonesNivel3)nuevo).EvaluarGanador() != null)
+                {
+                    Jugador jug = ((CaballerosYDragonesNivel3)nuevo).EvaluarGanador();
+                    AgregarPartida(jug.Nombre);
+                    MessageBox.Show(jug.Nombre);
                 }
                 btnJugar.Enabled = false;
             }

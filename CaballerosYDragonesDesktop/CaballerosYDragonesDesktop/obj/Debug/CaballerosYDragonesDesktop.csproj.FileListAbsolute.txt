@@ -16,3 +16,5 @@ C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\Caballero
 C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\obj\Debug\CaballerosYDragonesDesktop.pdb
 C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesNivel2ClassLibrary.dll
 C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesNivel2ClassLibrary.pdb
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesNivel3ClassLibrary.dll
+C:\Users\pablo\source\repos\Laboratorio2TP1\CaballerosYDragonesDesktop\CaballerosYDragonesDesktop\bin\Debug\CaballerosYDragonesNivel3ClassLibrary.pdb

@@ -8,11 +8,23 @@ namespace CaballerosYDragonesNivel2ClassLibrary
 {
     public class Dragon: Elemento
     {
-        public int PosicionActual { get; protected set; }
+        public int PosicionActual { get;  set; }
 
-        public int PosicionAnterior { get; protected set; }
+        public int PosicionAnterior { get;  set; }
 
         public int IdJugador { get {  return idJugador; } }
+
+        bool perdio = false;
+
+        public bool HaPerdido
+        {
+            get
+            { return perdio; }
+            set
+            { perdio = value; }
+
+        }
+
 
         int idJugador;
         public Dragon(int id) 

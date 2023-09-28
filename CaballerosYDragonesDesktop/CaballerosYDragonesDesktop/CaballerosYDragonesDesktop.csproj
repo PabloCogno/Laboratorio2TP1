@@ -39,6 +39,9 @@
     <Reference Include="CaballerosYDragonesNivel2ClassLibrary">
       <HintPath>..\..\CaballerosYDragonesNivel2ClassLibrary\CaballerosYDragonesNivel2ClassLibrary\bin\Debug\CaballerosYDragonesNivel2ClassLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="CaballerosYDragonesNivel3ClassLibrary">
+      <HintPath>..\..\CaballerosYDragonesNivel3ClassLibrary\CaballerosYDragonesNivel3ClassLibrary\bin\Debug\CaballerosYDragonesNivel3ClassLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

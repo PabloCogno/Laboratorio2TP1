@@ -13,6 +13,18 @@ namespace CaballerosYDragonesClassLibrary
 
         public string Nombre { get; private set; }
 
+        
+
+        public string Descripcion 
+        {
+            get
+            {
+                return $">{Nombre} se movió desde la posición: {PosicionAnterior}" +
+                                    $"a la posición {PosicionActual} ({Avance})"; ;
+            }
+        }
+
+
         int posicion;
         int idJugador;
 
@@ -28,6 +40,10 @@ namespace CaballerosYDragonesClassLibrary
                 else
                 {
                     posicion = 50;
+                }
+                if (value < 0)
+                {
+                    posicion = 0;
                 }
             }
         }
@@ -72,6 +88,8 @@ namespace CaballerosYDragonesClassLibrary
         {
             PosicionActual = 0;
         }
+
+
 
        
     }

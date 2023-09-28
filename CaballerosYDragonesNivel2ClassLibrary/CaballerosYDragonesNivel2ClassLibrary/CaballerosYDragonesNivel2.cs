@@ -10,6 +10,8 @@ namespace CaballerosYDragonesNivel2ClassLibrary
 {
     public class CaballerosYDragonesNivel2: CaballerosYDragonesBasico
     {
+
+
         protected ArrayList elementos = new ArrayList();
 
         public int CantidadElementos
@@ -46,21 +48,46 @@ namespace CaballerosYDragonesNivel2ClassLibrary
         {
             base.Jugar();
 
-            foreach (Dragon elemento in elementos)
+            foreach (JugadorNivel2 jugador in jugadores)
             {
-                if (elemento is Dragon dragon)
+                // Verificar si el jugador ha perdido
+                if (!jugador.HaPerdido)
                 {
-                    dragon.Mover();
+                    // Obtener los dragones del jugador actual
+                    foreach (Dragon dragon in elementos)
+                    {
+                        // Verificar si el dragón pertenece al jugador actual
+                        if (dragon.IdJugador == jugador.Id)
+                        {
+                            // Mover el dragón
+                            dragon.Mover();
+                        }
+                    }
                 }
-                
             }
 
+            //foreach (Elemento elemento in elementos)
+            //{
+            //    if (elemento is Dragon dragon)
+            //    {
+            //        dragon.Mover();
+            //    }
+
+            //}
+
+
+        }
+
+        virtual public void EvaluarJuego()
+        {
             foreach (JugadorNivel2 jugador in jugadores)
             {
                 foreach (Elemento elemento in elementos)
                 {
-                   
-                    elemento.Evaluar(jugador);
+                    if (((Dragon)elemento).HaPerdido == false)
+                    {
+                        elemento.Evaluar(jugador);
+                    }
                 }
             }
         }
