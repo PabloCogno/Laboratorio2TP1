@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CaballerosYDragonesClassLibrary;
+using CaballerosYDragonesNivel3ClassLibrary;
+
 
 namespace CaballerosYDragonesNivel2ClassLibrary
 {
@@ -41,7 +43,9 @@ namespace CaballerosYDragonesNivel2ClassLibrary
             {
                 elementos.Add(new Dragon(((JugadorNivel2)jugadores[i]).Id));
                 elementos.Add(new Dragon(((JugadorNivel2)jugadores[i]).Id));
+                
             }
+            ((Dragon)elementos[0]).ReiniciarContador();
         }
 
         public override void Jugar()
@@ -82,13 +86,22 @@ namespace CaballerosYDragonesNivel2ClassLibrary
         {
             foreach (JugadorNivel2 jugador in jugadores)
             {
-                foreach (Elemento elemento in elementos)
+                if (jugador.HaPerdido == false)
                 {
-                    if (((Dragon)elemento).HaPerdido == false)
+                    foreach (Elemento elemento in elementos)
                     {
-                        elemento.Evaluar(jugador);
+                        if (((Dragon)elemento).HaPerdido == false)
+                        {
+                            if (!(jugador is JugadorNivel3 jugadorNivel3) || !jugadorNivel3.TurnoSuspendido)
+                            {
+                                elemento.Evaluar(jugador);
+                            }
+
+                            //elemento.Evaluar(jugador);
+                        }
                     }
                 }
+                
             }
         }
 

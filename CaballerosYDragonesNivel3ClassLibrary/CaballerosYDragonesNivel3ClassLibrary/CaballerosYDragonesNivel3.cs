@@ -65,7 +65,7 @@ namespace CaballerosYDragonesNivel3ClassLibrary
         {
             
             base.Jugar();
-            
+
 
             //((Calabozos)calabozos[0]).PosicionActual = ((JugadorNivel3)jugadores[0]).PosicionActual;
             //((Dragon)elementos[3]).PosicionActual = ((JugadorNivel3)jugadores[0]).PosicionActual;
@@ -177,7 +177,8 @@ namespace CaballerosYDragonesNivel3ClassLibrary
             }
         }
 
-        // Resto de la lógica del juego
+
+        
     }
 
 }

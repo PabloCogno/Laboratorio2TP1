@@ -14,6 +14,14 @@ namespace CaballerosYDragonesNivel2ClassLibrary
 
         public int IdJugador { get {  return idJugador; } }
 
+        static int imagen;
+        int imagenId;
+
+        public int ImagenId
+        {
+            get { return imagenId; }
+        }
+
         bool perdio = false;
 
         public bool HaPerdido
@@ -30,6 +38,15 @@ namespace CaballerosYDragonesNivel2ClassLibrary
         public Dragon(int id) 
         {
             idJugador = id;
+            PosicionActual = Dado.Next(2, 48);
+            imagenId = imagen;
+            imagen++;
+
+        }
+
+        public void ReiniciarContador()
+        {
+            imagen = 0;
         }
 
         public override void Evaluar(JugadorNivel2 jugador)
