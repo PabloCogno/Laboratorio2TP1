@@ -21,7 +21,7 @@ namespace CaballerosYDragonesDesktop
 
         private void FSplash_Load(object sender, EventArgs e)
         {
-            
+            pbSplash.Controls.Add(label1);
         }
 
         private void timerSplash_Tick(object sender, EventArgs e)
