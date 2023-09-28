@@ -33,6 +33,8 @@
             this.btnJugar = new System.Windows.Forms.Button();
             this.btnListarHistorial = new System.Windows.Forms.Button();
             this.btnDemo = new System.Windows.Forms.Button();
+            this.pbCalabozo2 = new System.Windows.Forms.PictureBox();
+            this.pbCalabozo3 = new System.Windows.Forms.PictureBox();
             this.pbCalabozo1 = new System.Windows.Forms.PictureBox();
             this.pbDragon3b = new System.Windows.Forms.PictureBox();
             this.pbDragon3a = new System.Windows.Forms.PictureBox();
@@ -44,8 +46,8 @@
             this.pBjugador2 = new System.Windows.Forms.PictureBox();
             this.pBjugador1 = new System.Windows.Forms.PictureBox();
             this.pBtablero = new System.Windows.Forms.PictureBox();
-            this.pbCalabozo3 = new System.Windows.Forms.PictureBox();
-            this.pbCalabozo2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDragon3b)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDragon3a)).BeginInit();
@@ -57,8 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBjugador2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBjugador1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBtablero)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbResultados
@@ -110,6 +110,30 @@
             this.btnDemo.Text = "Demo";
             this.btnDemo.UseVisualStyleBackColor = true;
             this.btnDemo.Click += new System.EventHandler(this.btnDemo_Click);
+            // 
+            // pbCalabozo2
+            // 
+            this.pbCalabozo2.BackColor = System.Drawing.Color.Transparent;
+            this.pbCalabozo2.Image = global::CaballerosYDragonesDesktop.Properties.Resources.Calabozo;
+            this.pbCalabozo2.Location = new System.Drawing.Point(603, 428);
+            this.pbCalabozo2.Name = "pbCalabozo2";
+            this.pbCalabozo2.Size = new System.Drawing.Size(51, 42);
+            this.pbCalabozo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCalabozo2.TabIndex = 31;
+            this.pbCalabozo2.TabStop = false;
+            this.pbCalabozo2.Visible = false;
+            // 
+            // pbCalabozo3
+            // 
+            this.pbCalabozo3.BackColor = System.Drawing.Color.Transparent;
+            this.pbCalabozo3.Image = global::CaballerosYDragonesDesktop.Properties.Resources.Calabozo;
+            this.pbCalabozo3.Location = new System.Drawing.Point(1084, 428);
+            this.pbCalabozo3.Name = "pbCalabozo3";
+            this.pbCalabozo3.Size = new System.Drawing.Size(51, 42);
+            this.pbCalabozo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCalabozo3.TabIndex = 30;
+            this.pbCalabozo3.TabStop = false;
+            this.pbCalabozo3.Visible = false;
             // 
             // pbCalabozo1
             // 
@@ -240,30 +264,6 @@
             this.pBtablero.TabIndex = 7;
             this.pBtablero.TabStop = false;
             // 
-            // pbCalabozo3
-            // 
-            this.pbCalabozo3.BackColor = System.Drawing.Color.Transparent;
-            this.pbCalabozo3.Image = global::CaballerosYDragonesDesktop.Properties.Resources.Calabozo;
-            this.pbCalabozo3.Location = new System.Drawing.Point(1084, 428);
-            this.pbCalabozo3.Name = "pbCalabozo3";
-            this.pbCalabozo3.Size = new System.Drawing.Size(51, 42);
-            this.pbCalabozo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCalabozo3.TabIndex = 30;
-            this.pbCalabozo3.TabStop = false;
-            this.pbCalabozo3.Visible = false;
-            // 
-            // pbCalabozo2
-            // 
-            this.pbCalabozo2.BackColor = System.Drawing.Color.Transparent;
-            this.pbCalabozo2.Image = global::CaballerosYDragonesDesktop.Properties.Resources.Calabozo;
-            this.pbCalabozo2.Location = new System.Drawing.Point(603, 428);
-            this.pbCalabozo2.Name = "pbCalabozo2";
-            this.pbCalabozo2.Size = new System.Drawing.Size(51, 42);
-            this.pbCalabozo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCalabozo2.TabIndex = 31;
-            this.pbCalabozo2.TabStop = false;
-            this.pbCalabozo2.Visible = false;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,8 +289,11 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.lbResultados);
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDragon3b)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDragon3a)).EndInit();
@@ -302,8 +305,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBjugador2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBjugador1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBtablero)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCalabozo2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -539,6 +539,9 @@ namespace CaballerosYDragonesDesktop
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            FSplash fSplash = new FSplash(5);
+            fSplash.ShowDialog();
+
             pBtablero.Controls.Add(pBjugador1);
             pBtablero.Controls.Add(pBjugador2);
             pBtablero.Controls.Add(pBjugador3);
@@ -551,6 +554,8 @@ namespace CaballerosYDragonesDesktop
 
             pBtablero.Controls.Add(pbDragon3a);
             pBtablero.Controls.Add(pbDragon3b);
+
+            
 
         }
 
