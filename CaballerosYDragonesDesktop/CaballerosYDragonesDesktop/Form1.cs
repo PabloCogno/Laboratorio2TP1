@@ -39,7 +39,7 @@ namespace CaballerosYDragonesDesktop
 
             if (fDatos.ShowDialog() == DialogResult.OK)
             {
-                Iniciar();
+                //Iniciar();
                 VisibilityChange();
                 lbResultados.Items.Clear();
 
@@ -365,7 +365,7 @@ namespace CaballerosYDragonesDesktop
                 }
                 
                 btnJugar.Enabled = false;
-                Iniciar();
+                //Iniciar();
                 VisibilityChange();
             }
         }
@@ -539,7 +539,7 @@ namespace CaballerosYDragonesDesktop
                 }
 
                 btnJugar.Enabled = false;
-                Iniciar();
+                //Iniciar();
                 VisibilityChange();
             }
         }
