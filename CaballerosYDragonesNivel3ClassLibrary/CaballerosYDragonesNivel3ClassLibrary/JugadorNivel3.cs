@@ -10,9 +10,7 @@ namespace CaballerosYDragonesNivel3ClassLibrary
 {
     public class JugadorNivel3: JugadorNivel2
     {
-        string descripcion = "";
-
-        public string Descripcion { get { return descripcion; } set { descripcion = value; } }
+        
         public JugadorNivel3(string nombre) : base(nombre)
         {
 
@@ -24,17 +22,7 @@ namespace CaballerosYDragonesNivel3ClassLibrary
 
         public override void Mover()
         {
-            //if (TurnoSuspendido == true)
-            //{
-
-            //    TurnoSuspendido = false;
-
-            //}
-            //else
-            //{
-
-            //    base.Mover();
-            //}
+            
 
             if (TurnoSuspendido != true)
             {

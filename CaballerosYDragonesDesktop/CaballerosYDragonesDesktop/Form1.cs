@@ -23,6 +23,8 @@ namespace CaballerosYDragonesDesktop
 
         ArrayList partidas = new ArrayList();
 
+        ArrayList listaDragones;
+
         int c; //columnas
         int f; //filas
 
@@ -52,11 +54,13 @@ namespace CaballerosYDragonesDesktop
                 else if (nivel == 2)
                 {
                     nuevo = new CaballerosYDragonesNivel2(jugador, cantidad);
+                    listaDragones = ((CaballerosYDragonesNivel2)nuevo).Elementos;
                     
                 }
                 else if (nivel == 3)
                 {
                     nuevo = new CaballerosYDragonesNivel3(jugador, cantidad);
+                    listaDragones = ((CaballerosYDragonesNivel2)nuevo).Elementos;
                 }
 
                 for (int i = 1; i<=nuevo.CantidadJugadores; i++)
@@ -92,6 +96,36 @@ namespace CaballerosYDragonesDesktop
 
                     }
                 }
+
+                if (nuevo is CaballerosYDragonesNivel3 || nuevo is CaballerosYDragonesNivel2)
+                {
+                    for (int i = 0; i < nuevo.CantidadJugadores; i++)
+                    {
+                        if (i == 0)
+                        {
+                            pbDragon1a.Left = 50 + ((((Dragon)listaDragones[0]).PosicionActual % 10) * 90);
+                            pbDragon1a.Top = 45 + ((((Dragon)listaDragones[0]).PosicionActual / 10) * 90);
+                            pbDragon1b.Left = 50 + ((((Dragon)listaDragones[1]).PosicionActual % 10) * 90);
+                            pbDragon1b.Top = 45 + ((((Dragon)listaDragones[1]).PosicionActual / 10) * 90);
+
+                        }
+                        if (i == 1)
+                        {
+                            pbDragon2a.Left = 2 + ((((Dragon)listaDragones[2]).PosicionActual % 10) * 90);
+                            pbDragon2a.Top = 45 + ((((Dragon)listaDragones[2]).PosicionActual / 10) * 90);
+                            pbDragon2b.Left = 2 + ((((Dragon)listaDragones[3]).PosicionActual % 10) * 90);
+                            pbDragon2b.Top = 45 + ((((Dragon)listaDragones[3]).PosicionActual / 10) * 90);
+                        }
+                        if (i == 2)
+                        {
+                            pbDragon3a.Left = 35 + ((((Dragon)listaDragones[4]).PosicionActual % 10) * 90);
+                            pbDragon3a.Top = 0 + ((((Dragon)listaDragones[4]).PosicionActual / 10) * 90);
+                            pbDragon3b.Left = 35 + ((((Dragon)listaDragones[5]).PosicionActual % 10) * 90);
+                            pbDragon3b.Top = 0 + ((((Dragon)listaDragones[5]).PosicionActual / 10) * 90);
+                        }
+                    }
+                }
+
                 if (nuevo is CaballerosYDragonesNivel3)
                 {
                     
@@ -101,7 +135,9 @@ namespace CaballerosYDragonesDesktop
 
                     ArrayList ListaCalabozos = ((CaballerosYDragonesNivel3)nuevo).Calabozos;
 
-                    for (int i =  0; i < ListaCalabozos.Count; i++)
+
+
+                    for (int i = 0; i < ListaCalabozos.Count; i++)
                     {
                         if (i == 0)
                         {
@@ -120,21 +156,11 @@ namespace CaballerosYDragonesDesktop
                             pbCalabozo3.Top = 45 + ((((Calabozos)ListaCalabozos[i]).PosicionActual / 10) * 90);
                         }
 
-                        
+
                     }
                 }
 
-                //if (nuevo is CaballerosYDragonesNivel2 nivel2)
-                //{
-                //    for(int m = 0; m < nivel2.CantidadElementos; m++)
-                //    {
-                //        Elemento elemento = nivel2.VerElemento(m);
-                //        string linea = $"   {elemento.VerDescripcion()} ";
-
-                //        lbResultados.Items.Add(linea);
-                //        lbResultados.SelectedIndex = lbResultados.Items.Count - 1;
-                //    }
-                //}
+                
 
                 lbResultados.Items.Add("---");
 
@@ -145,8 +171,7 @@ namespace CaballerosYDragonesDesktop
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            //(nuevo.HaFinalizado() == false)   && (((CaballerosYDragonesNivel3)nuevo).EvaluarGanador() == null)
-            //(nuevo.HaFinalizado() == false) || ((nuevo is CaballerosYDragonesNivel3) && (((CaballerosYDragonesNivel3)nuevo).EvaluarGanador() == null))
+            
             if ((nuevo.HaFinalizado() == false) && (!(nuevo is CaballerosYDragonesNivel3) || (((CaballerosYDragonesNivel3)nuevo).EvaluarGanador() == null)))
             {
 
@@ -308,27 +333,9 @@ namespace CaballerosYDragonesDesktop
                         }
 
                     }
-
                     
                 }
-
-                //if (nuevo is CaballerosYDragonesNivel3 nivel4)
-                //{
-                //    for (int m = 0; m < nivel4.CantidadElementos; m++)
-                //    {
-                //        Jugador jugador = nuevo.VerJugador(m);
-
-                //        if (jugador is JugadorNivel3)
-                //        {
-                //            if (((JugadorNivel3)jugador).HaPerdido)
-                //            {
-                //                MessageBox.Show("Jugador perdedor: " + nivel4.Perdedor.Nombre);
-                //            }
-                //        }
-                //    }
-                //}
-
-
+                lbResultados.Items.Add("------");
 
             }
             else
@@ -566,19 +573,21 @@ namespace CaballerosYDragonesDesktop
             pBjugador1.Top = 45;
             pBjugador2.Left = 50;
             pBjugador2.Top = 45;
-            pBjugador3.Left = 35;//35; 12
+            pBjugador3.Left = 35;
             pBjugador3.Top = 12;
-            pbDragon1a.Left = 1149; //1149; 45
-            pbDragon1a.Top = 45;
-            pbDragon1b.Left = 785;  //785; 285
+            pbDragon1a.Left = 1149; 
+            
+            pbDragon1a.Top = 450;
+            pbDragon1b.Left = 785;
+            
             pbDragon1b.Top = 285;
-            pbDragon2a.Left = 603; //603; 519
+            pbDragon2a.Left = 603; 
             pbDragon2a.Top = 519;
-            pbDragon2b.Left = 363;//363; 285
+            pbDragon2b.Left = 363;
             pbDragon2b.Top = 285;
-            pbDragon3a.Left = 155; //155; 363
+            pbDragon3a.Left = 155; 
             pbDragon3a.Top = 363;
-            pbDragon3b.Left = 1001; //1001; 482
+            pbDragon3b.Left = 1001; 
             pbDragon3b.Top = 482;
             pbCalabozo1.Left = 734;
             pbCalabozo1.Top = 188;
@@ -594,25 +603,27 @@ namespace CaballerosYDragonesDesktop
            
             pBjugador2.Visible = false;
             
-            pBjugador3.Visible = false;//35; 12
+            pBjugador3.Visible = false;
             
-            pbDragon1a.Visible = false; //1149; 45
+            pbDragon1a.Visible = false; 
             
-            pbDragon1b.Visible = false;  //785; 285
+            pbDragon1b.Visible = false;  
             
-            pbDragon2a.Visible = false; //603; 519
+            pbDragon2a.Visible = false; 
             
-            pbDragon2b.Visible = false;//363; 285
+            pbDragon2b.Visible = false;
             
-            pbDragon3a.Visible = false; //155; 363
+            pbDragon3a.Visible = false; 
             
-            pbDragon3b.Visible = false; //1001; 482
+            pbDragon3b.Visible = false; 
             
             pbCalabozo1.Visible = false;
             
             pbCalabozo2.Visible = false;
             
             pbCalabozo3.Visible = false;
+
+            
             
         }
     }

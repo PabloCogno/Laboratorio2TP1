@@ -13,15 +13,11 @@ namespace CaballerosYDragonesNivel3ClassLibrary
     {
         
 
-
-
-
-
-        protected ArrayList perdedores = new ArrayList();
+        //protected ArrayList perdedores = new ArrayList();
 
         
 
-        public ArrayList Perdedores { get { return perdedores; } }
+        //public ArrayList Perdedores { get { return perdedores; } }
 
 
         public bool PropJuegoFinalizado { get { return juegoFinalizado; } }
@@ -78,7 +74,7 @@ namespace CaballerosYDragonesNivel3ClassLibrary
         public void AgregarPerdedor(JugadorNivel2 jugador)
         {
             jugador.HaPerdido = true;
-            perdedores.Add(jugador);
+            //perdedores.Add(jugador);
             
             juegoFinalizado = true;
             jugador.Perdedor = jugador;
@@ -119,10 +115,7 @@ namespace CaballerosYDragonesNivel3ClassLibrary
 
 
                                         }
-                                        else
-                                        {
-
-                                        }
+                                        
                                     }
                                 }
                                 
@@ -141,11 +134,6 @@ namespace CaballerosYDragonesNivel3ClassLibrary
 
             }
             base.EvaluarJuego();
-
-
-            //Calabozos calabozo in calabozos
-            //JugadorNivel3 jugador in jugadores
-            //Dragon dragon in elementos
 
 
 

@@ -38,27 +38,24 @@ namespace CaballerosYDragonesNivel3ClassLibrary
                         nivel3.TurnoSuspendido = true;
                         nivel3.AgregarAfectador(this);
 
-                        ((JugadorNivel3)jugador).Descripcion = $"Caballero: Id: {((JugadorNivel3)jugador).Id} Posicion Actual:{((JugadorNivel3)jugador).PosicionActual} ({((JugadorNivel3)jugador).Avance}) Cayo en calabozo C: {contador}";
-                        descripcion = $"Calabozo: Posicion Actual:{PosicionActual} Cayo en calabozo C: {contador}";
+                        
+                        descripcion = $"Calabozo: Posicion Actual:{PosicionActual} --- Cayo en calabozo ---";
                     }
                     else if (nivel3.TurnoSuspendido == true && nivel3.porQuienesFueAfectado.Contains(this) == true)
                     {
 
                         nivel3.TurnoSuspendido = false;
-                        ((JugadorNivel3)jugador).Descripcion = $"Caballero: Id: {((JugadorNivel3)jugador).Id} Posicion Actual:{((JugadorNivel3)jugador).PosicionActual} ({((JugadorNivel3)jugador).Avance}) Turno Suspendido C: {contador}";
-                        descripcion = $"Calabozo: Posicion Actual:{PosicionActual} --- Turno Suspendido --- C: {contador}";
+                        
+                        descripcion = $"Calabozo: Posicion Actual:{PosicionActual} --- Turno Suspendido ---";
                     }
-                    //nivel3.TurnoSuspendido = true;
+                    
 
 
                 }
 
             
             }
-            else
-            {
-                //descripcion = $"Calabozo: Posicion Actual:{PosicionActual}  C: {contador}";
-            }
+            
         }
 
         

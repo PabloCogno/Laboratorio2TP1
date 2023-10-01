@@ -162,7 +162,7 @@
             // pbDragon3a
             // 
             this.pbDragon3a.BackColor = System.Drawing.Color.Transparent;
-            this.pbDragon3a.Image = global::CaballerosYDragonesDesktop.Properties.Resources.DragonSinFondo;
+            this.pbDragon3a.Image = global::CaballerosYDragonesDesktop.Properties.Resources.DragonAmarilloSinFondo;
             this.pbDragon3a.Location = new System.Drawing.Point(155, 363);
             this.pbDragon3a.Name = "pbDragon3a";
             this.pbDragon3a.Size = new System.Drawing.Size(51, 72);
